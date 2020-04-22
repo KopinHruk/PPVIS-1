@@ -1,32 +1,18 @@
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.graphics.Rectangle;
-import org.eclipse.swt.layout.RowData;
-import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
-
-import javax.swing.BoxLayout;
 
 public class LastGroup {
     private static int it;
@@ -38,10 +24,7 @@ public class LastGroup {
     private static int add;
 
     public static void main(Composite group6, Shell shell, Display display, String[] argv) {
-        //Display display = new Display();
-        //Shell shell = new Shell(display);
-       // shell.setSize(600, 600);
-       // shell.setText("Group6");
+
         Text text1 = new Text(group6, SWT.BORDER);
         text1.setBounds(50, 50, 100, 30);
         Text text2 = new Text(group6, SWT.BORDER);

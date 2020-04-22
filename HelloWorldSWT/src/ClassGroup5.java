@@ -18,52 +18,46 @@ public class ClassGroup5 {
 	public static void main(Composite group5, Shell shell, String[] args) {
 Text g5_textField1 = new Text(group5, SWT.BORDER);    
 	    
-	    Button g5_button1 = new Button(group5, SWT.PUSH);
-	    g5_button1.setText("B1");	
+	    Button button1 = new Button(group5, SWT.PUSH);
+	    button1.setText("B1");	
 	    
-	    Button g5_button2 = new Button(group5, SWT.PUSH);
-	    g5_button2.setText("B2");	
+	    Button button2 = new Button(group5, SWT.PUSH);
+	    button2.setText("B2");	
 	    
-	    Button g5_button3 = new Button(group5, SWT.PUSH);
-	    g5_button3.setText("B3");	
+	    Button button3 = new Button(group5, SWT.PUSH);
+	    button3.setText("B3");	
 	    
-	    Table g5_table = new Table(group5, SWT.NONE);
+	    Table table = new Table(group5, SWT.NONE);
 	    String[] titles = { "Col 1", "Col 2"};
 
 	    for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
-	      TableColumn column = new TableColumn(g5_table, SWT.NULL);
+	      TableColumn column = new TableColumn(table, SWT.NULL);
 	      column.setText(titles[loopIndex]);
 	    }
 	    
-	    //for (int loopIndex = 0; loopIndex < 24; loopIndex++) {
-	     //   TableItem item = new TableItem(g5_table, SWT.NULL);
-	     //   item.setText("Item " + loopIndex);
-	    //    item.setText(0, "Item " + loopIndex);
-	    //    item.setText(1, "Yes");
-	    //  }
 	    
 	    for (int loopIndex = 0; loopIndex < titles.length; loopIndex++) {
-	    	g5_table.getColumn(loopIndex).pack();
+	    	table.getColumn(loopIndex).pack();
 	      }
 
 	    
 	    
-	    g5_button1.addSelectionListener(new SelectionAdapter() {
+	    button1.addSelectionListener(new SelectionAdapter() {
 	    	 
             @Override
             public void widgetSelected(SelectionEvent e) {
                 String temp_name = g5_textField1.getText();
-                TableItem item = new TableItem(g5_table, SWT.NULL);
+                TableItem item = new TableItem(table, SWT.NULL);
                 item.setText(0, temp_name);
             }
         });
 	    
-	    g5_button2.addSelectionListener(new SelectionAdapter() {
+	    button2.addSelectionListener(new SelectionAdapter() {
 	    	 
             @Override
             public void widgetSelected(SelectionEvent e) {
-                int current_index = g5_table.getSelectionIndex();
-                TableItem current_item = g5_table.getItem(current_index);
+                int current_index = table.getSelectionIndex();
+                TableItem current_item = table.getItem(current_index);
                 String temp_text = current_item.getText(0);
                 
                 if (!Objects.equals(temp_text, "")) {
@@ -73,12 +67,12 @@ Text g5_textField1 = new Text(group5, SWT.BORDER);
             }
         });
 	    
-	    g5_button3.addSelectionListener(new SelectionAdapter() {
+	    button3.addSelectionListener(new SelectionAdapter() {
 	    	 
             @Override
             public void widgetSelected(SelectionEvent e) {
-            	int current_index = g5_table.getSelectionIndex();
-                TableItem current_item = g5_table.getItem(current_index);
+            	int current_index = table.getSelectionIndex();
+                TableItem current_item = table.getItem(current_index);
                 String temp_text = current_item.getText(1);
                 
                 if (!Objects.equals(temp_text, "")) {
