@@ -15,15 +15,14 @@ import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 
 public class LastGroup {
-    private static int it;
-    private static int it2;
-    private static Table table;
-    private static Lock lock;
-    private static int column;
-    private static int str;
-    private static int add;
+    private  int tableHeight;
+    private  int tableWidth;
+    private  Table table;
+    private  int column;
+    private  int str;
+    private  int add;
 
-    public static void main(Composite group6, Shell shell, Display display, String[] argv) {
+    public  void main(Composite group6, Shell shell, Display display, String[] argv) {
 
         Text text1 = new Text(group6, SWT.BORDER);
         text1.setBounds(50, 50, 100, 30);
@@ -38,7 +37,6 @@ public class LastGroup {
         button2.setBounds(50, 150, 60, 20);
         button3.setText("Button3");
         button3.setBounds(50, 200, 60, 20);
-        lock = new ReentrantLock();
         add = 1;
 
 
@@ -47,17 +45,16 @@ public class LastGroup {
 
             @Override
             public void widgetSelected(SelectionEvent e) {
-            	if (table != null) {
-            		display.timerExec(-1, timer[0]);
+            if (table != null) {
             		table.dispose();
             	};
                 table = new Table(shell, SWT.MULTI | SWT.BORDER | SWT.FULL_SELECTION);
                 table.setRedraw(true);
                 table.setLinesVisible(true);
                 table.setHeaderVisible(true);
-                it2 = Integer.parseInt(text2.getText());
-                it = Integer.parseInt(text1.getText());
-                for (int i = 0; i < it2+1; i++) {
+                tableWidth = Integer.parseInt(text2.getText());
+                tableHeight = Integer.parseInt(text1.getText());
+                for (int i = 0; i < tableWidth+1; i++) {
                     TableColumn column = new TableColumn(table, SWT.NONE);
                     if (i == 0) {
                     	column.setText("");
@@ -65,17 +62,17 @@ public class LastGroup {
                     	column.setText(Integer.toString(i));
                     };
                 }
-                for (int i = 0; i < it; ++i) {
+                for (int i = 0; i < tableHeight; ++i) {
                     TableItem item = new TableItem(table, SWT.NONE);
                     table.getItem(i).setText(0, Integer.toString(i));
                 }
 
-                for (int i = 0; i < it2+1; i++) {
+                for (int i = 0; i < tableWidth+1; i++) {
                     table.getColumn(i).pack();
                 }
                 table.setBounds(200, 100, 300, 300);
-                column = (int) ((Math.random() * it2)+1);
-                str = (int) (Math.random() * it);
+                column = (int) ((Math.random() * tableWidth)+1);
+                str = (int) (Math.random() * tableHeight);
                 table.getItem(str).setText(column, "t");
                 
                 shell.layout();
@@ -89,13 +86,11 @@ public class LastGroup {
             public void widgetSelected(SelectionEvent e) {
                 timer[0] = new Runnable() {
                     public void run() {
-                        lock.lock();
-                        lock.unlock();
                         table.getItem(str).setText(column, "");
                         if (add == 1) {
-                            if (column + 1 == it2+1) {
+                            if (column + 1 == tableWidth+1) {
                                 add *= -1;
-                                if (str + 1 == it) {
+                                if (str + 1 == tableHeight) {
                                     str = 0;
                                     column = 1;
                                     add *= -1;
@@ -108,7 +103,7 @@ public class LastGroup {
                         } else {
                             if (column - 1 == 0) {
                                 add *= -1;
-                                if (str + 1 == it) {
+                                if (str + 1 == tableHeight) {
                                     str = 0;
                                 } else {
                                     str += 1;

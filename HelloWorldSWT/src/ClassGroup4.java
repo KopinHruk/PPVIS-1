@@ -27,7 +27,7 @@ Text g4_textField1 = new Text(group4, SWT.BORDER);
 	    
 	    MessageBox dialog = new MessageBox(shell, SWT.ICON_QUESTION | SWT.OK);
 	    dialog.setText("opaaa..");
-	    dialog.setMessage("Если введено имя JCheckBox, которого не существует, то должно быть выведено диалоговое окно с ошибкой. ");
+	    dialog.setMessage("If a JCheckBox name is entered that does not exist, an error dialog should be displayed.");
 	    
 	    
 	    button.addSelectionListener(new SelectionAdapter() {

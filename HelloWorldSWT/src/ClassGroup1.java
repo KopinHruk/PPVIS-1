@@ -23,7 +23,7 @@ public class ClassGroup1 {
 	    
 	    MessageBox dialog = new MessageBox(shell, SWT.ICON_QUESTION | SWT.OK);
 	    dialog.setText("opaaa..");
-	    dialog.setMessage("диалоговое окно о невозможности добавления введенного текста. ");
+	    dialog.setMessage("dialog box about the impossibility of adding the entered text.");
 	    
 	    
 	    

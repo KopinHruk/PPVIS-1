@@ -27,7 +27,7 @@ public class ClassGroup3 {
 	    
 	    MessageBox dialog = new MessageBox(shell, SWT.ICON_QUESTION | SWT.OK);
 	    dialog.setText("opaaa..");
-	    dialog.setMessage("Если введено имя JRadioButton, которого не существует, то должно быть выведено диалоговое окно с ошибкой. ");
+	    dialog.setMessage("If a JRadioButton name is entered that does not exist, an error dialog should be displayed.");
 	    
 	    
 	    button.addSelectionListener(new SelectionAdapter() {

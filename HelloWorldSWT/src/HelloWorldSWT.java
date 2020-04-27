@@ -47,7 +47,8 @@ public class HelloWorldSWT {
 	    ClassGroup3.main(group3, shell, args);
 	    ClassGroup4.main(group4, shell, args);
 	    ClassGroup5.main(group5, shell, args);  		    
-	    LastGroup.main(group6, shell, display, args);    
+	    LastGroup LastGroupObject = new LastGroup();
+	    LastGroupObject.main(group6, shell, display, args);    
 	    
 	    shell.open();
 	    
