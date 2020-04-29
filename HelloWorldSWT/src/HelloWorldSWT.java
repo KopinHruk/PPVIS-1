@@ -42,12 +42,12 @@ public class HelloWorldSWT {
 	    group6.setLayout(eachGroupLayout);	    
 
 
-	    ClassGroup1.main(group1, shell, args);	    
-	    ClassGroup2.main(group2, shell, args);	  
-	    ClassGroup3.main(group3, shell, args);
-	    ClassGroup4.main(group4, shell, args);
-	    ClassGroup5.main(group5, shell, args);  		    
-	    LastGroup LastGroupObject = new LastGroup();
+	    TextInserter.main(group1, shell, args);	    
+	    TextSwapper.main(group2, shell, args);	  
+	    RadioButtonSelector.main(group3, shell, args);
+	    CheckBoxSelector.main(group4, shell, args);
+	    TableItemSwapper.main(group5, shell, args);  		    
+	    TableAnimator LastGroupObject = new TableAnimator();
 	    LastGroupObject.main(group6, shell, display, args);    
 	    
 	    shell.open();
