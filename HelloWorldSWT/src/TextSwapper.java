@@ -23,8 +23,8 @@ public class TextSwapper {
 		    	 
 	            @Override
 	            public void widgetSelected(SelectionEvent e) {
-	                String temp_text = textField.getText();
-	                button2.setText(temp_text);
+	                String tempText = textField.getText();
+	                button2.setText(tempText);
 	            }
 	        });
 		    
@@ -32,10 +32,10 @@ public class TextSwapper {
 		    	 
 	            @Override
 	            public void widgetSelected(SelectionEvent e) {
-	                String temp_text1 = button1.getText();
-	                String temp_text2 = button2.getText();
-	                button2.setText(temp_text1);
-	                button1.setText(temp_text2);
+	                String tempText1 = button1.getText();
+	                String tempText2 = button2.getText();
+	                button2.setText(tempText1);
+	                button1.setText(tempText2);
 	            }
 	        });
 		
