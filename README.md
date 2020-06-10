@@ -1,3 +1,4 @@
+'''
 variety.viewport.typeset = function(strAddress) {
 var driver = variety.viewport.driver;
 delete driver.typesetString;
@@ -6,7 +7,7 @@ var s = this.recoverStrFromMemory(strAddress);
 if(s == "0") s = "10";
 driver.typesetString = s.split('\n');
 };
-
+'''
 
 
 
