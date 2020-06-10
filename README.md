@@ -1,3 +1,18 @@
+variety.viewport.typeset = function(strAddress) {
+var driver = variety.viewport.driver;
+delete driver.typesetString;
+delete driver.typesetScale;
+var s = this.recoverStrFromMemory(strAddress);
+if(s == "0") s = "10";
+driver.typesetString = s.split('\n');
+};
+
+
+
+
+
+
+
 Первая лаба ППВИС
 Выполнил студент Пашкевич В.Л гр. 821701
 
